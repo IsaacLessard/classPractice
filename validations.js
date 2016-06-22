@@ -23,12 +23,14 @@ class Validator {
   }
 
   checkLength (obj, key) {
-    if (this.validationObject[key].length.hasOwnProperty('greaterThan')) {
-      if (obj[key].length <= this.validationObject[key].length.greaterThan) {
-        this.errors.push(key + ' does not have length that is > ' + this.validationObject[key].length.greaterThan)
-      } // greater than
-    } // checks length key for greaterThan value
+    this.validationObject[key].length.hasOwnProperty('greaterThan') ? this.greaterThan(obj, key) : false
   } // checks for property length
+
+  greaterThan (obj, key) {
+    if (obj[key].length <= this.validationObject[key].length.greaterThan) {
+      this.errors.push(key + ' does not have length that is > ' + this.validationObject[key].length.greaterThan)
+    } // greater than
+  }
 
 }
 
