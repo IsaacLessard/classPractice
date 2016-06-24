@@ -1,0 +1,8 @@
+.delete-button:hover {
+  cursor: crosshair;
+}
+
+.edit-button {
+  padding-right: 15px;
+  cursor: cell;
+}
